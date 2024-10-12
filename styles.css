@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: url("image.jpg");
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.header {
+    color: white;
+    margin: 30px;
+    text-align: center;
+}
+
+.calculator {
+    width: 100%; /* Make the width flexible */
+    max-width: 400px; /* Set a maximum width for large screens */
+
+    border: 1px solid #f549c779;
+    padding: 20px;
+    border-radius: 16px;
+    background: transparent;
+    box-shadow: 0px 3px 15px #fa46ca70;
+    position: relative; /* To make sure the glow is relative to the calculator */
+    animation: glow 2s infinite alternate; /* Adding animation to the border */
+}
+
+/* Glowing animation */
+@keyframes glow {
+    0% {
+        box-shadow: 0px 0px 15px 5px rgba(230, 78, 189, 0.5); /* Starting with a soft glow */
+    }
+    50% {
+        box-shadow: 0px 0px 25px 10px rgba(226, 77, 186, 0.8); /* Medium intensity glow */
+    }
+    100% {
+        box-shadow: 0px 0px 35px 15px rgb(236, 95, 199); /* Strong glow at the end */
+    }
+}
+
+/* input {
+    width: 320px;
+    border: none;
+    padding: 24px;
+    margin: 10px;
+    background: transparent;
+    box-shadow: 0px 3px 15px rgba(84, 84, 84, 0.1);
+    font-size: 40px;
+    text-align: right;
+    cursor: pointer;
+    color: #ffffff;
+} */
+
+input::placeholder {
+    color: #ffffff;
+}
+
+/* button {
+    border: none;
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    border-radius: 50%;
+    background: transparent;
+    color: #ffffff;
+    font-size: 20px;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+} */
+
+.equalBtn {
+    background-color: #fb7c14;
+}
+
+.operator {
+    color: #6dee0a;
+}
+
+.footer {
+    color: white;
+    margin: 50px;
+    text-align: center;
+}
+
+/* General button styling */
+button {
+    border: none;
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    border-radius: 50%;
+    background: #eb63c7c5; /* Added background color for better contrast */
+    color: #ffffff; /* Ensuring white text for visibility */
+    font-size: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Darker shadow for better visibility */
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effects */
+button:hover {
+    transform: scale(1.1);
+    background-color: #e752c0fd; /* Bright background to make text pop on hover */
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5); /* Slightly stronger shadow */
+    color: #fff; /* Keeps text white */
+}
+
+/* For equal button */
+.equalBtn {
+    background-color: #fb7c14d2;
+    color: #ffffff; /* Ensures white text on orange background */
+}
+
+.equalBtn:hover {
+    background-color: #ff5722; /* Different hover color for equal button */
+    transform: scale(1.15);
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+}
+
+/* For operator buttons */
+.operator {
+    background-color: #6dee0ac5; /* Added bright background for operators */
+    color: #ffffff;
+}
+
+.operator:hover {
+    background-color: #00ff00; /* Brighter hover background */
+    transform: scale(1.1);
+}
+
+/* Input styling for calculator */
+input {
+    width: 100%; /* Make input field take the full width */
+    border: none;
+    padding: 24px;
+    margin: 10px;
+    background: transparent;
+    box-shadow: 0px 3px 15px rgba(84, 84, 84, 0.1);
+    font-size: 40px;
+    text-align: right;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+
+
+/* Medium-sized screens (iPad, iPad Mini) */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .calculator {
+        width: 80%; /* Take more space on tablets */
+        max-width: 450px;
+    }
+
+    button {
+        width: 65px;
+        height: 65px;
+        font-size: 1.8rem;
+    }
+
+    input {
+        font-size: 2rem;
+        padding: 25px;
+    }
+}
+
+/* Small screens (mobile devices) */
+@media (max-width: 768px) {
+    .calculator {
+        width: 90%;
+        max-width: 400px;
+    }
+
+    input {
+        font-size: 1.5rem;
+        padding: 15px;
+    }
+
+    button {
+        width: 55px;
+        height: 55px;
+        font-size: 1.3rem;
+        margin: 8px;
+    }
+}
+
+/* Extra small screens (phones <480px) */
+@media (max-width: 480px) {
+    .calculator {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    input {
+        font-size: 1.2rem;
+        padding: 12px;
+    }
+
+    button {
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+        margin: 6px;
+    }
+}
+
+/* Breakpoint for Google Nest Hub */
+@media (max-width: 1024px) and (min-width: 600px) {
+    .calculator {
+        width: 100%; /* Adjust for mid-size devices */
+        max-width: 400px; /* Maintain max width */
+    }
+    input {
+        font-size: 2rem; /* Medium font size */
+        padding: 20px; /* Maintain padding */
+    }
+    button {
+        height: 60px; /* Maintain button height */
+        font-size: 1.5rem; /* Maintain font size */
+    }
+}
+
+/* Breakpoint for Surface Pro 7 */
+@media  (max-width: 1024px) and (min-width: 600px) {
+    .calculator {
+        width: 100%; /* More space on mobile */
+        max-width: 500px; /* Limit width */
+    }
+    input {
+        font-size: 1.5rem; /* Smaller font for mobile */
+        padding: 15px; /* Decrease padding */
+    }
+    button {
+        height: 50px; /* Smaller buttons */
+        font-size: 1.2rem; /* Smaller font size */
+    }
+}
